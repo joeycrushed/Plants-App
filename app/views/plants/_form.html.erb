@@ -1,0 +1,9 @@
+<%= simple_form_for [plant] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :image, placeholder: 'please enter URL path' %>
+  <%= f.input :description  %>
+   <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
+
+<!-- we've setup the schema is setup so that the image: is a string
+ like a URL -->

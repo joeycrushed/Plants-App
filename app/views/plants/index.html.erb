@@ -1,27 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-success">
-  <a class="navbar-brand text-dark" href="#">Plants App</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto ">
-      <li class="nav-item active pr-3">
-        <%= link_to 'Home', plants_path, class: " text-dark text-decoration-none"%><span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item pr-3">
-        <%= link_to 'List your plant', new_plant_path, class: " text-dark text-decoration-none"%>
-      </li>
-      <li class="nav-item pr-3">
-        <%= link_to 'Bookings', '#', class: "text-dark text-decoration-none" %>
-      </li>
-  </div>
-</nav>
-
-<h1 class="m-3">Plants</h1>
+<h1 class="m-3">Plants App</h1>
 
 <div class="container">
-
   <div class="card rounded shadow-sm mb-5 bg-white" style="width: 15rem;">
     <% @plants.each do |plant| %>
     <img class="card-img-top" src="<%= plant.image %>" alt="Card image cap">
@@ -33,6 +12,4 @@
       <% end %>
     </div>
   </div>
-
 </div>
-

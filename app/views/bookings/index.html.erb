@@ -1,5 +1,9 @@
 <ul>
   <% @bookings.each do |booking| %>
-    <li><%= booking.name %></li>
+    <h1>Your bookings</h1>
+    <li>You've booked to rent: <%= booking.plant.name %></li>
+    <li> from <%= booking.start_date %> to <%= booking.end_date %></li>
+
   <% end %>
 </ul>
+

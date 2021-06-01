@@ -1,9 +1,12 @@
 class BookingsController < ApplicationController
+  before_action :set_booking, only: [:show, :edit, :update]
+
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(user: current_user)
   end
 
   def new
+    @plant = Plant.find(params[:plant_id])
     @booking = Booking.new
   end
 
@@ -11,12 +14,23 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @plant = Plant.find(params[:plant_id])
     @booking.plant = @plant
-    @booking.save
+    @booking.user = current_user
     if @booking.save
       redirect_to plants_path(@plant)
     else
       render :new
     end
+  end
+
+  def edit
+    @plant = Plant.find(params[:plant_id])
+  end
+
+  def update
+    @plant = Plant.find(params[:plant_id])
+    @booking.plant = @plant
+    @booking.update(booking_params)
+    redirect_to plant_path(@plant)
   end
 
   def destroy

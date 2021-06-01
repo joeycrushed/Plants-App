@@ -1,0 +1,24 @@
+.card-show {
+  border-radius: 5px;
+  border: 1px solid #808080;
+  padding: 16px;
+  margin-top: 16px;
+  display: flex;
+
+  img {
+    height: 200px;
+
+  }
+}
+
+.card-text {
+  margin-left: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1, p {
+    padding-bottom: 24px;
+  }
+}

@@ -1,33 +1,38 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Plants App</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
+  <a class="navbar-brand text-dark" href="#">Plants App</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+    <ul class="navbar-nav mr-auto ">
+      <li class="nav-item active pr-3">
+        <%= link_to 'Home', plants_path, class: " text-dark text-decoration-none"%><span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Plants</a>
+      <li class="nav-item pr-3">
+        <%= link_to 'List your plant', new_plant_path, class: " text-dark text-decoration-none"%>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Rent your plant</a>
+      <li class="nav-item pr-3">
+        <%= link_to 'Bookings', '#', class: "text-dark text-decoration-none" %>
       </li>
   </div>
 </nav>
 
-<div class="d-flex justify-content-space-evenly align-items-center">
- <div class="row">
+<h1 class="m-3">Plants</h1>
 
-    <h1>Plants</h1>
+<div class="container">
+
+  <div class="card rounded shadow-sm mb-5 bg-white" style="width: 15rem;">
     <% @plants.each do |plant| %>
-      <div class="card">
-      <p> <%= link_to plant.name%> </p>
-      <img src="<%= plant.image %>" alt=" <%= plant.name %>">
-    <% end %>
+    <img class="card-img-top" src="<%= plant.image %>" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><%= plant.name %></h5>
+      <p class="card-text"><%= plant.description %></p>
+
+      <%= link_to 'view details', plant_path(plant), class:"btn btn-success" %></a>
+      <% end %>
     </div>
   </div>
+
 </div>
 

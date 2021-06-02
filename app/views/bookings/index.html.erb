@@ -1,15 +1,13 @@
-<h1 style="text-align: center; margin: 10px">Your bookings</h1>
-<div class="container">
+<h1 class="pt-3 pb-3" style="text-align: center; margin: 10px">Your bookings</h1>
+  <div class="container">
   <div class="row">
     <% @bookings.each do |booking| %>
-      <div class="col-3 card m-2">
-        <img class="card-img-top" src="<%= booking.plant.image %>" style="height:200px;"/>
-        <div class="card-body">
-          <h2 class="card-title"><%= booking.plant.name %></h2>
+      <div class="card" style="width: 16rem;">
+        <img class="card-img-top" src="<%= booking.plant.image %>"/>
+        <div class="card-body text-center">
+          <h4 class="card-title"><%= booking.plant.name %></h4>
           <p><i><%= booking.start_date.strftime("%d %b %y") %> - <%= booking.end_date.strftime("%d %b %y") %></i></p>
           <%= link_to 'Delete booking', booking_path(booking), method: :delete, class: "btn btn-light", data: {confirm: "are you sure?"} %>
         </div>
       </div>
     <% end %>
-  </div>
-</div>

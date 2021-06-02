@@ -5,7 +5,11 @@
     <div class ="card-text rounded">
       <h1> <%= @plant.name %> </h1>
       <p> <%= @plant.description %> </p>
-      <%= link_to 'Rent Plant', new_plant_booking_path(@plant), class: "btn btn-success" %>
+      <div class="d-flex">
+        <%= link_to 'Rent Plant', new_plant_booking_path(@plant), class: "btn btn-success mr-2" %>
+        <%= link_to 'Remove Plant', plant_path(@plant), method: :delete, class: "btn btn-light", data: {confirm: "are you sure?"} %>
+      </div>
+
     </div>
   </div>
 

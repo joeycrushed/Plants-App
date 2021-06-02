@@ -20,7 +20,8 @@ class PlantsController < ApplicationController
   def show; end
 
   def destroy
-    @plant.delete
+    @plant.destroy
+    redirect_to plants_path
   end
 
   private

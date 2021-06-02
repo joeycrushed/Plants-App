@@ -1,13 +1,19 @@
-<div class="container">
-  <div class="card rounded shadow-sm mb-5 bg-white" style="width: 15rem;">
-    <% @plants.each do |plant| %>
-    <img class="card-img-top" src="<%= plant.image %>" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title"><%= plant.name %></h5>
-      <p class="card-text"><%= plant.description %></p>
+<h3 class="m-3">Plants</h3>
 
-      <%= link_to 'view details', plant_path(plant), class:"btn btn-success" %></a>
+<div class="container">
+  <div class="cards">
+    <% @plants.each do |plant| %>
+    <%= link_to plant_path(plant) do %>
+    <div class="card-trip">
+      <img src=" <%= plant.image %> " />
+      <div class="card-trip-infos">
+        <div>
+          <h2> <%= plant.name %> </h2>
+          <p> <%= plant.description.truncate(150) %> </p>
+        </div>
+      </div>
     </div>
-      <% end %>
+    <% end %>
+    <% end %>
   </div>
 </div>

@@ -1,9 +1,14 @@
-<ul>
-  <% @bookings.each do |booking| %>
-    <h1>Your bookings</h1>
-    <li>You've booked to rent: <%= booking.plant.name %></li>
-    <li> from <%= booking.start_date %> to <%= booking.end_date %></li>
-
-  <% end %>
-</ul>
-
+<h1 style="text-align: center; margin: 10px">Your bookings</h1>
+<div class="container">
+  <div class="row">
+    <% @bookings.each do |booking| %>
+      <div class="col-3 card m-2">
+        <img class="card-img-top" src="<%= booking.plant.image %>" style="height:200px;"/>
+        <div class="card-body">
+          <h2 class="card-title"><%= booking.plant.name %></h2>
+          <p> from <%= booking.start_date %> to <%= booking.end_date %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -23,7 +23,7 @@ images = ["https://images.unsplash.com/photo-1587168574161-c05a6281fab4?ixid=Mnw
 ]
 9.times do
   plant = Plant.new(
-    name: "#{Faker::Creature::Animal.name} #{plants.sample}",
+    name: "#{Faker::Creature::Animal.name.capitalize} #{plants.sample}",
     description: Faker::TvShows::BigBangTheory.quote,
     image: images.sample
   )

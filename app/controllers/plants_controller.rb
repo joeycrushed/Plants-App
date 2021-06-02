@@ -1,5 +1,7 @@
 class PlantsController < ApplicationController
   before_action :set_plant, only: [ :show, :edit, :update, :destroy ]
+  skip_before_action :authenticate_user!, only: [:index]
+
   def index
     @plants = Plant.all
   end
@@ -10,6 +12,7 @@ class PlantsController < ApplicationController
 
   def create
     @plant = Plant.new(plant_params)
+    @plant.user = current_user
     if @plant.save
       redirect_to plant_path(@plant)
     else

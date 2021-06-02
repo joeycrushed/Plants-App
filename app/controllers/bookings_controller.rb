@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     @booking.plant = @plant
     @booking.user = current_user
     if @booking.save
-      redirect_to plants_path(@plant)
+      redirect_to bookings_path
     else
       render :new
     end

@@ -20,7 +20,15 @@ class PlantsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @plants = Plant.all
+    @markers = @plants.geocoded.map do |plant|
+      {
+        lat: plant.latitude,
+        lng: plant.longitude
+      }
+    end
+  end
 
   def destroy
     @plant.destroy

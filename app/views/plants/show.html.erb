@@ -1,7 +1,11 @@
 <div class="container">
 
   <div class="card-show">
-    <img src=" <%=@plant.image%>" alt="<%= @plant.name %>">
+    <% if @plant.photo.attached? %>
+      <%= cl_image_tag @plant.photo.key %>
+    <% else %>
+      <img src=" <%=@plant.image%>" alt="<%= @plant.name %>">
+    <% end %> 
     <div class ="card-text rounded">
       <h1> <%= @plant.name %> </h1>
       <p> <%= @plant.description %> </p>
@@ -9,8 +13,6 @@
         <%= link_to 'Rent Plant', new_plant_booking_path(@plant), class: "btn btn-success mr-2" %>
         <%= link_to 'Remove Plant', plant_path(@plant), method: :delete, class: "btn btn-light", data: {confirm: "are you sure?"} %>
       </div>
-
     </div>
   </div>
-
 </div>

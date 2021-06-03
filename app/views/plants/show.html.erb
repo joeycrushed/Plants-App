@@ -2,8 +2,13 @@
 <div class="d-flex">
 
   <div class="card-show">
+
       <div class="d-flex justify-content-center">
-      <img class="img-card" src=" <%=@plant.image%>" alt="<%= @plant.name %>">
+        <% if @plant.photo.attached? %>
+          <%= cl_image_tag @plant.photo.key %>
+        <% else %>
+          <img src=" <%=@plant.image%>" alt="<%= @plant.name %>">
+        <% end %> 
       </div>
 
     <div class ="card-text pt-3">
@@ -12,12 +17,14 @@
 
       <div class="d-flex justify-content-center">
         <%= link_to 'Rent Plant', new_plant_booking_path(@plant), class: "btn btn-success mr-3" %>
+
         <% if @plant.user == current_user %>
           <%= link_to 'Remove Plant', plant_path(@plant), method: :delete, class: "btn btn-light", data: {confirm: "are you sure?"} %>
+        <% else %>
+          <%= link_to 'Rent Plant', new_plant_booking_path(@plant), class: "btn btn-success mr-2" %>
         <% end %>
       </div>
 
-    </div>
   </div>
 
     <div id="map"

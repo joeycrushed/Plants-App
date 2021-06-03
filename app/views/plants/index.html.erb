@@ -5,7 +5,11 @@
     <% @plants.each do |plant| %>
     <%= link_to plant_path(plant) do %>
     <div class="card-trip">
-      <img src=" <%= plant.image %> " />
+      <% if plant.photo.attached? %>
+        <%= cl_image_tag plant.photo.key %>
+      <% else %>
+        <img src=" <%=plant.image%>" alt="<%= plant.name %>">
+      <% end %>
       <div class="card-trip-infos">
         <div>
           <h2> <%= plant.name %> </h2>

@@ -2,7 +2,7 @@
 <div class=" form-style col-6 offset-3 border p-4 bg-white">
 <%= simple_form_for [plant] do |f| %>
     <%= f.input :name, required: false, placeholder: 'please enter a plant name' %>
-    <%= f.input :image, required: false, placeholder: 'please enter URL image path' %>
+    <%= f.input :photo, as: :file %>
     <%= f.input :description, required: false, class: ".bg-light", placeholder: 'please enter a description'  %>
      <%= f.button :submit, class: "btn btn-success text-center" %>
   <% end %>

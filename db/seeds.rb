@@ -12,7 +12,7 @@ User.destroy_all
 user = User.new(email: "re@test.co.uk", password: "123456")
 user.save!
 # need to add an address to all of these once columns added to plant model
-plant = Plant.new(name: "Calathea", image: "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1557255932-the-sill-potted-plant-calathea-medallion-prospect-black-7-1500x-progressive-1557255913.jpg?crop=1.00xw:0.774xh;0,0.174xh&resize=768:*", description: "Prayer plants produce foliage pretty enough to outshine a bouquet, and you don't need a botany degree to maintain one. For the best display, keep the plant moist (not drenched) and avoid bright light.", user: user)
+plant = Plant.new(name: "Calathea", image: "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1557255932-the-sill-potted-plant-calathea-medallion-prospect-black-7-1500x-progressive-1557255913.jpg?crop=1.00xw:0.774xh;0,0.174xh&resize=768:*", description: "Prayer plants produce foliage pretty enough to outshine a bouquet, and you don't need a botany degree to maintain one. For the best display, keep the plant moist (not drenched) and avoid bright light.", user: user, address: '46 Grosvenor Court, Adenmore Road, London, SE6 4FD')
 plant.save!
 plant = Plant.new(name: "Ponytail Palm", image: "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1557256823-beaucarnea-recurvata-ponytail-palm-1557256813.jpg?crop=0.889xw:1.00xh;0.0721xw,0&resize=768:*", description: "Officially called the Beaucarnea recurvata, the slow-growing ponytail palm likes basking in a sunny window. Don't douse the Mexico native with too much water.", user: user)
 plant.save!

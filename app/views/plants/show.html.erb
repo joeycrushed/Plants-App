@@ -1,15 +1,23 @@
-<div class="container">
+
+<div class="d-flex">
 
   <div class="card-show">
-    <% if @plant.photo.attached? %>
-      <%= cl_image_tag @plant.photo.key %>
-    <% else %>
-      <img src=" <%=@plant.image%>" alt="<%= @plant.name %>">
-    <% end %> 
-    <div class ="card-text rounded">
+
+      <div class="d-flex justify-content-center">
+        <% if @plant.photo.attached? %>
+          <%= cl_image_tag @plant.photo.key %>
+        <% else %>
+          <img src=" <%=@plant.image%>" alt="<%= @plant.name %>">
+        <% end %> 
+      </div>
+
+    <div class ="card-text pt-3">
       <h1> <%= @plant.name %> </h1>
-      <p> <%= @plant.description %> </p>
-      <div class="d-flex">
+      <p> <%= @plant.description %></p>
+
+      <div class="d-flex justify-content-center">
+        <%= link_to 'Rent Plant', new_plant_booking_path(@plant), class: "btn btn-success mr-3" %>
+
         <% if @plant.user == current_user %>
           <%= link_to 'Remove Plant', plant_path(@plant), method: :delete, class: "btn btn-light", data: {confirm: "are you sure?"} %>
         <% else %>
@@ -18,12 +26,13 @@
       </div>
 
   </div>
-</div>
 
-<div id="map"
-           style="width: 100%; height: 300px;"
-           data-markers="<%= @markers.to_json %>"
-           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-</div>
+    <div id="map"
+               style="width: 100%; height: 100vh; position: sticky; top: 0;"
+               data-markers="<%= @markers.to_json %>"
+               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 
-</div>
+    </div>
+
+  </div>
+

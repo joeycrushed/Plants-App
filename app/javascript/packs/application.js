@@ -30,7 +30,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initSweetalert } from '../plugins/pop_up.js';
 
 document.addEventListener('turbolinks:load', () => {
-
+  
   initSweetalert('#create-plant-btn', {
     title: "A nice alert",
     text: "This is a great alert, isn't it?",
@@ -38,7 +38,13 @@ document.addEventListener('turbolinks:load', () => {
     buttons: false
   });
 
-  // Call your functions here, e.g:
-  // initSelect2();
+  // initSweetalert('#delete-plant-btn', {
+  //   title: "Are you sure?",
+  //   text: "Once deleted, you will not be able to recover this imaginary file!",
+  //   icon: "warning",
+  //   buttons: true,
+  //   dangerMode: true,
+  // });
+
   initMapbox();
 });

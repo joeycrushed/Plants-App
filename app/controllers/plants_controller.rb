@@ -25,8 +25,8 @@ class PlantsController < ApplicationController
   end
 
   def show
-    @plants = Plant.all
-    @markers = @plants.geocoded.map do |plant|
+    marker = Plant.where(id: params[:id])
+    @markers = marker.geocoded.map do |plant|
       {
         lat: plant.latitude,
         lng: plant.longitude,

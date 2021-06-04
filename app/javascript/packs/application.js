@@ -16,7 +16,6 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
@@ -28,9 +27,17 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initMapbox } from '../plugins/init_mapbox';
-
+import { initSweetalert } from '../plugins/pop_up.js';
 
 document.addEventListener('turbolinks:load', () => {
+
+  initSweetalert('#create-plant-btn', {
+    title: "A nice alert",
+    text: "This is a great alert, isn't it?",
+    icon: "success",
+    buttons: false
+  });
+
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();

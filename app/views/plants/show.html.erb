@@ -4,7 +4,7 @@
     <% if @plant.photo.attached? %>
     <%= cl_image_tag @plant.photo.key, class: "img-card" %>
     <% else %>
-    <img class="img-card justify-content-center" src=" <%=@plant.image%>" alt="<%= @plant.name %>">
+    <%= image_tag @plant.image, class: "img-card justify-content-center" %>
     <% end %>
     <div class="mt-4 ml-5">
       <h1> <%= @plant.name %> </h1>

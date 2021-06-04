@@ -8,7 +8,7 @@ const initSweetalert = (selector, options = {}) => {
       swal(options);
       setInterval(()=> {
       document.getElementById("new_plant").submit();  
-      }, 1000)
+      }, 1500)
     });
   }
 };

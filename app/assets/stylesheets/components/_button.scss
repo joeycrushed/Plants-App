@@ -24,5 +24,39 @@
   transition: 0.7s;
   background-color: white;
   color: black;
+    &:hover {
+      background-color: #b5b5b5;
+      color: #0A1E12;
 
+    }
+
+}
+
+
+.btn-create {
+  background-color:#406E42;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: 0.7s;
+  color: white;
+   &:hover {
+    text-decoration: none;
+    border: none;
+    opacity: 1;
+    color: #0A1E12;
+    padding: 12px 15px;
+    background-color: white;
+  }
+}
+
+.btn-remove {
+  border: 1px solid #0A1E12;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: 0.7s;
+  opacity: 0.8;
+  &:hover{
+    color:white;
+    background-color: #0A1E12;
+  }
 }

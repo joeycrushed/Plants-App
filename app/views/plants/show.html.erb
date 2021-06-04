@@ -1,12 +1,14 @@
 <div class="d-flex flex-row">
 
 
+<div class="d-flex flex-row">
+
   <div class= "d-flex justify-content-center col-6 m-5">
         <% if @plant.photo.attached? %>
           <%= cl_image_tag @plant.photo.key, class: "img-card" %>
         <% else %>
           <img class="img-card justify-content-center" src=" <%=@plant.image%>" alt="<%= @plant.name %>">
-        <% end %>
+        <% end %> 
       <div class="mt-5 ml-5">
         <h1> <%= @plant.name %> </h1>
         <p> <%= @plant.description %> </p>
@@ -20,6 +22,23 @@
                    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 
     </div>
+
+    <!-- I need some help with positioning the buttons -->
+
+   <!--  <div class="">
+      <%= link_to 'Rent Plant', new_plant_booking_path(@plant), class: "btn btn-success mr-3" %>
+          <% if @plant.user == current_user %>
+            <%= link_to 'Remove Plant', plant_path(@plant), method: :delete, class: "btn btn-light", data: {confirm: "are you sure?"} %>
+          <% else %>
+            <%= link_to 'Rent Plant', new_plant_booking_path(@plant), class: "btn btn-success mr-3" %>
+          <% end %>
+      </div> -->
+=======
+
+    <div class="col-6 ml-auto" id="map"
+                   style="position: sticky; height: 100vh; width: 550px "
+                   data-markers="<%= @markers.to_json %>"
+                   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 
     <!-- I need some help with positioning the buttons -->
 

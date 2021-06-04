@@ -1,5 +1,30 @@
 .form-style {
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 20
 }
 
+.form-text {
+  font-family: 'Poppins', sans-serif;
+  color: black;
+}
+
+.form-button {
+  background-color:#75ae78;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: 0.7s;
+  padding: 12px 15px;
+  color: white;
+   &:hover {
+    color: white;
+    text-decoration: none;
+    border: none;
+    opacity: 1;
+    background-color: #afd0b0;
+  }
+}
+
+.h1-color {
+  color: white;
+}

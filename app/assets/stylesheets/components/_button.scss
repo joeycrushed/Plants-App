@@ -1,0 +1,28 @@
+.banner-btn {
+  background-color:#406E42;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: 0.7s;
+  padding: 12px 15px;
+  color: white;
+   &:hover {
+    text-decoration: none;
+    border: none;
+    opacity: 1;
+    color: #0A1E12;
+    background-color: white;
+  }
+}
+
+.input-style {
+  font-size: 14px;
+}
+
+.search-btn {
+  border-radius: 5px;
+  font-size: 14px;
+  transition: 0.7s;
+  background-color: white;
+  color: black;
+
+}

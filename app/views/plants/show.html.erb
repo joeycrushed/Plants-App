@@ -13,11 +13,12 @@
   </div>
 
   <div class="button-position">
-    <%= link_to 'Rent Plant', new_plant_booking_path(@plant), class: "btn btn-create mr-3" %>
     <% if @plant.user == current_user %>
-    <%= link_to 'Remove Plant', plant_path(@plant), method: :delete, class: "btn btn-remove", id: "delete-plant-btn"%>
+
+      <%= link_to 'Remove Plant', plant_path(@plant), method: :delete, class: "btn btn-remove", id: "delete-plant-btn"%>
+
     <% else %>
-    <%= link_to 'Rent Plant', new_plant_booking_path(@plant), class: "btn btn-create mr-3" %>
+      <%= link_to 'Rent Plant', new_plant_booking_path(@plant), class: "btn btn-create mr-3" %>
     <% end %>
   </div>
 

@@ -6,7 +6,23 @@
   text-align: center;
 }
 
+.card-text-p {
+  margin-top: 34px
+}
+
 .img-card {
   border-radius: 25px;
   height: 350px;
+}
+
+
+.cards-index a {
+  text-decoration: none;
+  color: black;
+}
+
+.button-position {
+    position: absolute;
+    left: 460px;
+    top: 380px;
 }

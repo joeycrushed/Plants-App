@@ -10,24 +10,32 @@
 .banner h1 {
   margin: 0;
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 52px;
-  font-weight: bold;
+  font-weight: bolder;
+
+}
+
+.banner img {
+  opacity: 0.7;
 }
 
 .banner p {
   font-size: 20px;
   color: white;
-  opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: 'Poppins', sans-serif;
+
 }
 .btn-flat {
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #1EDD88;
+  background: #406E42;
   transition: background 0.3s ease;
+
 }
+
 .banner .container{
   flex-direction: column;
 }
+

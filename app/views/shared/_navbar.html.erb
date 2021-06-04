@@ -1,22 +1,22 @@
 <nav class="navbar navbar-light navbar-color">
-  <a class="navbar-brand text-dark">Plants App 🌿</a>
+  <a class="navbar-brand nav-text">Plants App <i class="fas fa-leaf"></i></a>
 
   <div class="text-center" id="navbarSupportedContent">
     <ul class="navbar-nav flex-row">
-      <li class="nav-item active pr-3">
-        <%= link_to 'Plants 🌱', plants_path, class:" text-dark text-decoration-none"%><span class="sr-only"><span>(current)</span></a>
+      <li class="nav-item active pr-5">
+        <%= link_to 'Plants', plants_path, class:" nav-text text-decoration-none"%><span class="sr-only"><span>(current)</span></a>
       </li>
-      <li class="nav-item pr-3">
-        <%= link_to 'List your plant 🍁', new_plant_path, class: " text-dark text-decoration-none"%>
+      <li class="nav-item pr-5">
+        <%= link_to 'List your plant', new_plant_path, class: " nav-text text-decoration-none"%>
       </li>
-      <li class="nav-item pr-3">
-        <%= link_to 'Bookings 🥬', bookings_path, class: "text-dark text-decoration-none" %>
+      <li class="nav-item pr-5">
+        <%= link_to 'Bookings', bookings_path, class: "nav-text  text-decoration-none" %>
       </li>
     </ul>
   </div>
-  <div class="dropdown show">
-    <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Sign In/Out
+  <div class="dropdown dropleft">
+    <a class="navbar-signin text-decoration-none " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Account
     </a>
 
     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">

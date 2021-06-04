@@ -4,6 +4,6 @@
     <%= f.input :name, required: false, placeholder: 'please enter a plant name' %>
     <%= f.input :photo, as: :file %>
     <%= f.input :description, required: false, class: ".bg-light", placeholder: 'please enter a description'  %>
-     <%= f.button :submit, class: "btn btn-success text-center" %>
+    <%= f.button :submit, class: "btn btn-success text-center", id: "create-plant-btn" %>
   <% end %>
 </div>

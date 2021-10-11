@@ -13,12 +13,10 @@
   </div>
 
   <div class="button-position">
-    <% if @plant.user == current_user %>
-
-      <%= link_to 'Remove Plant', plant_path(@plant), method: :delete, class: "btn btn-remove", id: "delete-plant-btn"%>
-
-    <% else %>
+    <% if @plant.user != current_user %>
       <%= link_to 'Rent Plant', new_plant_booking_path(@plant), class: "btn btn-create mr-3" %>
+    <% else %>
+      <%= link_to 'Remove Plant', plant_path(@plant), method: :delete, class: "btn btn-remove", id: "delete-plant-btn"%>
     <% end %>
   </div>
 
@@ -26,6 +24,7 @@
   style="position: sticky; height: 100vh; width: 550px "
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+
   </div>
 
 </div>

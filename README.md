@@ -19,3 +19,10 @@ pass - 123456
 - Mapbox API
 - HTML
 - SCSS
+
+# Key Functionality 
+
+- Users can sign up & login
+- Create & delete a booking 
+- Create a new plant listing
+- Remove a plant if they are the owner
